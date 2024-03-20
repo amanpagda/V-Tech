@@ -1,0 +1,265 @@
+
+  
+/* Home page */
+
+.number {
+    font-size: small;
+    height: 40px;
+}
+
+.nav-link {
+	text-transform:uppercase;
+}
+
+.brochure {
+    background-color: #f4f2f9;
+    color: black;
+}
+
+.brochure:hover {
+    background-color: #06425e;
+    color: white;
+    transition: 1500ms;
+}
+
+
+.mail2 {
+    font-family: sans-serif;
+}
+
+/* About as page */
+
+.hed {
+    position: relative;
+    background-color: black;
+}
+
+.hedbg {
+    background-image: url(ASSETS/aboutimg1.webp);
+    height: 200px;
+    width: 100%;
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 65%;
+
+}
+
+.click {
+    display: flex;
+    justify-content: center;
+}
+
+.text11 {
+    text-decoration: none;
+    color: inherit;
+    border: 1.5px solid black;
+    border-radius: 10px;
+}
+
+
+
+.btn1 {
+    text-decoration: none;
+    position: relative;
+    z-index: 3;
+}
+
+.btn2 {
+    text-decoration: none;
+    position: relative;
+    z-index: 2;
+    right: 30px;
+    background-color: #1d1729;
+    color: white;
+}
+
+.btn2:hover {
+    background-color: white;
+    color: black;
+}
+
+.btn3 {
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+    right: 60px;
+    background-color: #312547;
+    color: white;
+}
+
+.btn3:hover {
+    background-color: white;
+    color: black;
+}
+
+/* product page */
+
+.hed2 {
+    position: relative;
+    background-color: black;
+}
+
+.hedbg2 {
+    background-image: url(ASSETS/bgimage2.webp);
+    height: 200px;
+    width: 100%;
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 65%;
+    color: black;
+}
+
+.Cate {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+}
+
+.pbtn:hover {
+    background-color: #06425e;
+    color: white;
+}
+
+.p_img {
+    border: 1px solid black;
+}
+
+.pbtn {
+    background-color: transparent;
+    color: #06425e;
+    border: 1px solid #06425e;
+}
+
+.sub1 {
+    background-color: black;
+    color: white;
+}
+
+.sub1:hover {
+    background-color: #06425e;
+    color: white;
+    transition: 1s;
+}
+
+.ao {
+    text-decoration: none;
+}
+
+.au {
+    border-bottom: 1px solid #06425e;
+}
+
+.dropbtn {
+    background-color: #000000;
+	color:#595959;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    position: fixed;
+  }
+  
+  .dropbtn:hover{
+	  color:black;
+  }
+  
+  .dropdown {
+    position: relative;
+    display:    block;
+  }
+  .dropdown a{
+    text-decoration: none;
+    background-color: white;
+    position: relative;
+    color: rgb(0 0 0 / 65%);
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #ddd;
+}
+  
+  .dropdown:hover .dropdown-content {
+      display: block;
+}
+
+.p_one {
+    background-color: #d9d9d9;
+    color: #000000;
+    font-weight: bold;
+}
+
+.p_one:hover {
+    background-color: #000000;
+    color: white;
+}
+
+.p_two {
+    background-color: #d9d9d9;
+    color: #000000;
+    font-weight: bold;
+}
+
+.p_two:hover {
+    background-color: #000000;
+    color: white;
+}
+
+/* quality page*/
+
+#btn_pil:hover {
+	background-color:black;
+	color:white;
+}
+
+#btn_pil {
+    background-color: #f0f0f0;
+    color: black;
+}
+
+.btn1_pil {
+    background-color: #f0f0f0;
+    color: black;
+}
+
+.btn1_pil:hover {
+    background-color: black;
+    color: white;
+}
+
+.rou_h3 {
+    height: 65px;
+    width: 65px;
+}
+
+.redi_us {
+    border-radius: 30px 30px 0px 30px;
+    background-color: #06425e;
+    transition: 0.5s;
+}
+
+.redi_us:hover {
+    background-color: #fecc00;
+}
+
+.redi_u {
+    border: 1px solid #d9d9d9;
+    border-radius: 30px 30px 30px 30px;
+}
+
