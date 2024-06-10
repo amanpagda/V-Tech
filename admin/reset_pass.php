@@ -30,10 +30,11 @@ function sendMail($email, $reset_token){
         //Content
         $mail->isHTML(true);                                  //Set email format to HTML
         $mail->Subject = 'Password Reset Link From Company Name';
-        $mail->Body    = 'This is the HTML message body <b>Click The Link</b><br>
-        <a href="http://localhost/v-tech/admin/upreset.php?email="'.$email.'"&token="'.$$reset_token.'"">Reset Password</a>';
+        $mail->Body    = "This is the HTML message body <b>Click The Link</b><br>
+        <button type='button' class='btn btn-primary'>
+        <a href='http://localhost/v-tech/admin/upreset.php?email=$email&token=$reset_token'>Reset Passwor</a>
+        </button>";
         $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
-    
         $mail->send();
         return true;
     } catch (Exception $e) {
