@@ -7,7 +7,8 @@ if (isset($_POST["login_submit"])) {
     $name = $_POST["name"];
     $password = $_POST["password"];
 
-    $result = mysqli_query($conn, "SELECT * FROM `admin` WHERE `name`='$name'");
+    $sql = "SELECT * FROM `admin` WHERE `name`='$name'";
+    $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result) > 0) {
         $data = mysqli_fetch_assoc($result);
@@ -22,7 +23,7 @@ if (isset($_POST["login_submit"])) {
             }
         } else {
             echo "<script>
-                  alert('try Again');
+                  alert('try Again $data[password]');
                   </script>";
         }
     }

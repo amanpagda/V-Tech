@@ -1,7 +1,7 @@
-<?php 
+<?php
 session_start();
 include("db.php");
- ?>
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -60,19 +60,19 @@ include("db.php");
                                     <label class="form-label">Select Role</label>
                                     <select class="form-control" name="role">
                                         <option value="Admin" <?php if ($row["role"] == "Admin") {
-                                            echo "selected";
-                                        } ?>>Admin</option>
+                                                                    echo "selected";
+                                                                } ?>>Admin</option>
                                         <option value="Super-Admin" <?php if ($row["role"] == "Super-Admin") {
-                                            echo "selected";
-                                        } ?>>Super-Admin</option>
+                                                                        echo "selected";
+                                                                    } ?>>Super-Admin</option>
                                     </select>
                                 </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Password</label>
-                                    <input type="password" class="form-control" name="password" value="<?php echo $row["password"]; ?>">
+                                <div class="forgot-btn my-3">
+                                    <p class="fw-bold pt-3 pb-2">→ If You Want To Update Your Password Than Click On Password Update ←</p>
+                                    <button type="button" class="btn btn-primary"><a href="reset_pass.php" class="text-white">Password Update</a></button>
                                 </div>
                                 <div class="d-flex justify-content-end">
-                                    <button type="submit" name="update" class="btn btn-primary">Submit</button>
+                                    <button type="submit" name="update" class="btn btn-primary">Update</button>
                                     <button type="reset" class="btn btn-danger" style="margin-left: 5px;">Reset</button>
                                 </div>
                             </form>
@@ -87,11 +87,8 @@ include("db.php");
                             $name = $_POST["name"];
                             $email = $_POST["email"];
                             $role = $_POST["role"];
-                            $password = $_POST["password"];
-                            $token = md5(rand());
 
-                            $hash = password_hash($password, PASSWORD_DEFAULT);
-                            $sql = "UPDATE `admin` SET `name`='$name',`email`='$email',`role`='$role',`password`='$hash',`token`='$token', `date`= current_timestamp() WHERE id='$id'";
+                            $sql = "UPDATE `admin` SET `name`='$name',`email`='$email',`role`='$role', `date`= current_timestamp() WHERE id='$id'";
                             $result = mysqli_query($conn, $sql);
 
                             if ($result) {

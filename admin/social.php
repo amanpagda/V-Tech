@@ -5,47 +5,6 @@ include("db.php");
 <!DOCTYPE html>
 <html lang="en">
 
-<?php
-if (isset($_POST["row_update"])) {
-
-    $id = $_POST["id"];
-    $new_image = $_FILES["image"]["name"];
-    $old_image = $_POST["image_old"];
-
-    if ($new_image != '') {
-        $update_file = $new_image;
-        if (file_exists("image/logos/" . $_FILES["image"]["name"])) {
-
-            echo "<script>
-                alert('File already Exists');
-                window.location.href = 'logo.php';
-                </script>";
-        }
-    } else {
-        $update_file = $old_image;
-    }
-    $sql = "UPDATE `logos` SET `image`='$update_file',`date`=current_timestamp() WHERE id='$id'";
-    $result = mysqli_query($conn, $sql);
-
-    if ($result) {
-        if ($_FILES["image"]["name"] != '') {
-            move_uploaded_file($_FILES["image"]["tmp_name"], "image/logos/" . $_FILES["image"]["name"]);
-            unlink("image/logos/" . $old_image);
-        }
-        echo "<script>
-                alert('Update Successfuly');
-                window.location.href = 'logo.php';
-                </script>";
-    } else {
-        echo "<script>
-                alert('Update Error!');
-                window.location.href = 'logo.php';
-                </script>";
-    }
-}
-
-?>
-
 <!-- Added by HTTrack -->
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 

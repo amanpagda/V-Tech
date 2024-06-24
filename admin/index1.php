@@ -149,7 +149,6 @@ include("db.php");
                             $email = $_POST["email"];
                             $role = $_POST["role"];
                             $password = $_POST["password"];
-                            $token = md5(rand());
 
                             if (mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `admin` WHERE `name`='$name'")) > 0) {
                                 echo "<script>
@@ -158,7 +157,7 @@ include("db.php");
                                 </script>";
                             } else {
                                 $hash = password_hash($password, PASSWORD_DEFAULT);
-                                mysqli_query($conn, "INSERT INTO `admin`(`name`, `email`, `role`, `password`, `token`, `date`) VALUES ('$name','$email','$role','$hash', '$token',current_timestamp())");
+                                mysqli_query($conn, "INSERT INTO `admin`(`name`, `email`, `role`, `password`, `date`) VALUES ('$name','$email','$role','$hash',current_timestamp())");
                                 echo "<script>
                                 alert('Thank You');
                                 window.location.href = 'index1.php';

@@ -122,7 +122,7 @@
           while ($row = mysqli_fetch_assoc($result)) {
           ?>
             <form class="d-flex me-5 rounded brochure">
-              <button class="btn" type="submit"><?php echo $row["brochere"];?></button>
+              <button class="btn" type="submit"><?php echo $row["brochere"]; ?></button>
             </form>
           <?php
           }

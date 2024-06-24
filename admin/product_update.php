@@ -1,7 +1,7 @@
 <?php
 session_start();
 include("db.php");
- ?>
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,7 +49,7 @@ include("db.php");
                                 <input type="hidden" name="id" value="<?php echo $row["id"]; ?>">
                                 <div class="mb-3">
                                     <label class="form-label">Product Name</label>
-                                    <input type="text" class="form-control" name="product_name" value="<?php echo $row["product_name"];?>">
+                                    <input type="text" class="form-control" name="product_name" value="<?php echo $row["product_name"]; ?>">
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Product Category</label>
@@ -96,12 +96,12 @@ include("db.php");
                                 <div class="mb-3">
                                     <label class="form-label">Sub Category Image</label>
                                     <input type="file" class="form-control mb-3" name="product_image">
-                                    <input type="hidden" class="form-control" name="old_product_image" value="<?php echo $row["product_image"];?>">
-                                    <img src="<?php echo "image/product/".$row["product_image"];?>" width="150px">
+                                    <input type="hidden" class="form-control" name="old_product_image" value="<?php echo $row["product_image"]; ?>">
+                                    <img src="<?php echo "image/product/" . $row["product_image"]; ?>" width="150px">
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Description</label>
-                                    <textarea class="form-control" name="pro_description" required><?php echo $row["pro_description"];?></textarea>
+                                    <textarea class="form-control" name="pro_description" required><?php echo $row["pro_description"]; ?></textarea>
                                 </div>
                                 <div class="d-flex justify-content-end">
                                     <button type="submit" name="product_update" class="btn btn-primary">Submit</button>
