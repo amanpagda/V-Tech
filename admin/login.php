@@ -18,15 +18,15 @@ if (isset($_POST["login_submit"])) {
 
                 $_SESSION["role"] = $data["role"];
                 $_SESSION["name"] = $data["name"];
-        
+
                 header("location: index1.php");
             }
         } else {
             echo "<script>
-                  alert('try Again $data[password]');
+                  alert('try Again');
                   </script>";
         }
     }
 
-    
+
 }

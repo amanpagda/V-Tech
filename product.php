@@ -11,7 +11,16 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="Responsive.css">
-  <title>Document</title>
+  <?php
+  $conn = mysqli_connect("localhost", "root", "", "test");
+  $sql = "SELECT * FROM `seo` WHERE id = '3'";
+  $result = mysqli_query($conn, $sql);
+  while ($row = mysqli_fetch_assoc($result)) {
+    ?>
+  <title><?php echo $row["title"]; ?></title>
+  <?php
+  }
+  ?>
 </head>
 
 <body style="font-family: arial;">
@@ -34,20 +43,21 @@
     <div class="container">
       <!-- section 1 -->
       <div class="row">
-      <?php
+        <?php
       include("admin/db.php");
       $sql = "SELECT * FROM `product`";
       $result = mysqli_query($conn, $sql);
       while ($row = mysqli_fetch_assoc($result)) {
       ?>
-          <div class="col-4">
-            <img src="<?php echo "admin/image/product/".$row["product_image"];?>" alt="image" class="img-fluid p_img rounded-5">
-            <div class="d-grid gap-2">
-              <button class="btn btn-primary py-lg-3 py-sm-0 fw-bold rounded-5 pbtn" type="button">
-                <?php echo $row["product_name"];?>
-              </button>
-            </div>
+        <div class="col-4">
+          <img src="<?php echo "admin/image/product/".$row["product_image"];?>" alt="image"
+            class="img-fluid p_img rounded-5">
+          <div class="d-grid gap-2">
+            <button class="btn btn-primary py-lg-3 py-sm-0 fw-bold rounded-5 pbtn" type="button">
+              <?php echo $row["product_name"];?>
+            </button>
           </div>
+        </div>
         <?php
       }
       ?>

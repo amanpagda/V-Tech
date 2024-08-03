@@ -11,76 +11,77 @@ include("db.php");
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elegant Dashboard | Dashboard</title>
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="img/svg/logo.html" type="image/x-icon">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <!-- Custom styles -->
-    <link rel="stylesheet" href="css/style.min.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elegant Dashboard | Dashboard</title>
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="img/svg/logo.html" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="css/style.min.css">
 </head>
 
 <body>
-    <div class="layer"></div>
-    <!-- ! Body -->
-    <a class="skip-link sr-only" href="#skip-target">Skip to content</a>
-    <div class="page-flex">
-        <!-- ! Sidebar -->
-        <?php include("sidebar.php"); ?>
-        <div class="main-wrapper">
-            <!-- ! Main nav -->
-            <?php include("header.php"); ?>
-            <!-- ! Main -->
-            <main class="main users chart-page" id="skip-target">
-                <div class="container">
-                    <h2 class="main-title">Add Sub Category</h2>
+  <div class="layer"></div>
+  <!-- ! Body -->
+  <a class="skip-link sr-only" href="#skip-target">Skip to content</a>
+  <div class="page-flex">
+    <!-- ! Sidebar -->
+    <?php include("sidebar.php"); ?>
+    <div class="main-wrapper">
+      <!-- ! Main nav -->
+      <?php include("header.php"); ?>
+      <!-- ! Main -->
+      <main class="main users chart-page" id="skip-target">
+        <div class="container">
+          <h2 class="main-title">Add Sub Category</h2>
 
-                    <!-- form start -->
-                    <div class="container">
-                        <form action="product.php" method="post" enctype="multipart/form-data">
-                            <div class="mb-3">
-                                <label class="form-label">Product Name</label>
-                                <input type="text" class="form-control" name="product_name">
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Product Category</label>
-                                <select class="form-select" id="category" name="product_category_name">
-                                    <option disabled selected>Open this select menu</option>
-                                    <?php
+          <!-- form start -->
+          <div class="container">
+            <form action="product.php" method="post" enctype="multipart/form-data">
+              <div class="mb-3">
+                <label class="form-label">Product Name</label>
+                <input type="text" class="form-control" name="product_name">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Product Category</label>
+                <select class="form-select" id="category" name="product_category_name">
+                  <option disabled selected>Open this select menu</option>
+                  <?php
                                     $sql = "SELECT * FROM `category` WHERE sub_category = 'Yes'";
                                     $result = mysqli_query($conn, $sql);
                                     while ($a = mysqli_fetch_array($result)) {
                                     ?>
-                                        <option value="<?php echo $a["id"]; ?>"><?php echo $a["category"]; ?></option>
-                                    <?php
+                  <option value="<?php echo $a["id"]; ?>"><?php echo $a["category"]; ?></option>
+                  <?php
                                     }
                                     ?>
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Product Sub Category</label>
-                                <select class="form-select" id="sub_category" name="product_sub_category">
-                                    <option disabled selected>Open this select menu</option>
-                                </select>
-                            </div>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Product Sub Category</label>
+                <select class="form-select" id="sub_category" name="product_sub_category">
+                  <option disabled selected>Open this select menu</option>
+                </select>
+              </div>
 
-                            <div class="mb-3">
-                                <label class="form-label">Sub Category Image</label>
-                                <input type="file" class="form-control" name="product_image">
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Description</label>
-                                <textarea class="form-control" name="pro_description" required></textarea>
-                            </div>
-                            <div class="d-flex justify-content-end">
-                                <button type="submit" name="product_submit" class="btn btn-primary">Submit</button>
-                                <button type="reset" class="btn btn-danger" style="margin-left: 5px;">Reset</button>
-                            </div>
-                        </form>
+              <div class="mb-3">
+                <label class="form-label">Sub Category Image</label>
+                <input type="file" class="form-control" name="product_image">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Description</label>
+                <textarea class="form-control" name="pro_description" required></textarea>
+              </div>
+              <div class="d-flex justify-content-end">
+                <button type="submit" name="product_submit" class="btn btn-primary">Submit</button>
+                <button type="reset" class="btn btn-danger" style="margin-left: 5px;">Reset</button>
+              </div>
+            </form>
 
-                        <?php
+            <?php
                         // insert start
                         $targetdir = "image/product/";
                         $watermark_path = "watermark.png";
@@ -166,70 +167,70 @@ include("db.php");
 
 
                         ?>
-                    </div>
+          </div>
 
-                    <!-- table -->
-                    <div class="container row mt-5">
-                        <div class="col-12">
-                            <table class="table text-center">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">ID</th>
-                                        <th scope="col">PRODUCT NAME</th>
-                                        <th scope="col">PRODUCT CATEGORY</th>
-                                        <th scope="col">SUB CATEGORY</th>
-                                        <th scope="col">DESCRIPTION</th>
-                                        <th scope="col">PRODUCT IMAGE</th>
-                                        <th scope="col">ACTIONS</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php
+          <!-- table -->
+          <div class="container row mt-5">
+            <div class="col-12">
+              <table class="table text-center">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">PRODUCT NAME</th>
+                    <th scope="col">PRODUCT CATEGORY</th>
+                    <th scope="col">SUB CATEGORY</th>
+                    <th scope="col">DESCRIPTION</th>
+                    <th scope="col">PRODUCT IMAGE</th>
+                    <th scope="col">ACTIONS</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php
                                     $sql = "SELECT * FROM `product`";
                                     $result = mysqli_query($conn, $sql);
                                     $i = 0;
                                     while ($row = mysqli_fetch_assoc($result)) {
                                         $i += 1;
                                     ?>
-                                        <tr>
-                                            <th scope="row"><?php echo $i; ?></th>
-                                            <td><?php echo $row["product_name"]; ?></td>
-                                            <?php
+                  <tr>
+                    <th scope="row"><?php echo $i; ?></th>
+                    <td><?php echo $row["product_name"]; ?></td>
+                    <?php
                                             $category = $row["product_category_name"];
                                             $sql = "SELECT * FROM `category` WHERE id='$category'";
                                             $result1 = mysqli_query($conn, $sql);
                                             while ($ab = mysqli_fetch_assoc($result1)) {
                                             ?>
-                                                <td><?php echo $ab["category"]; ?></td>
-                                            <?php
+                    <td><?php echo $ab["category"]; ?></td>
+                    <?php
                                             }
                                             ?>
-                                            <?php
+                    <?php
                                             $sub_category = $row["product_sub_category"];
                                             $sql = "SELECT * FROM `sub_category` WHERE id='$sub_category'";
                                             $result1 = mysqli_query($conn, $sql);
                                             while ($ac = mysqli_fetch_assoc($result1)) {
                                             ?>
-                                                <td><?php echo $ac["sub_category_name"]; ?></td>
-                                            <?php
+                    <td><?php echo $ac["sub_category_name"]; ?></td>
+                    <?php
                                             }
                                             ?>
-                                            <td><?php echo $row["pro_description"]; ?></td>
-                                            <td><img src="<?php echo "image/product/" . $row["product_image"]; ?>" width="150px"></td>
-                                            <td>
-                                                <a href="<?php echo "product_update.php?id=$row[id]" ?>" class='btn btn-primary mb-3'>
-                                                    <i class="fa-regular fa-pen-to-square"></i>
-                                                </a>
-                                                <form action="product.php" method="POST">
-                                                    <input type="hidden" name="del_id" value="<?php echo "$row[id]"; ?>">
-                                                    <input type="hidden" name="del_image" value="<?php echo "$row[product_image]"; ?>">
-                                                    <button type="submit" name="delete_id" class="btn btn-danger">
-                                                        <i class="fa-solid fa-trash"></i>
-                                                    </button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                    <?php
+                    <td><?php echo $row["pro_description"]; ?></td>
+                    <td><img src="<?php echo "image/product/" . $row["product_image"]; ?>" width="150px"></td>
+                    <td>
+                      <a href="<?php echo "product_update.php?id=$row[id]" ?>" class='btn btn-primary mb-3'>
+                        <i class="fa-regular fa-pen-to-square"></i>
+                      </a>
+                      <form action="product.php" method="POST">
+                        <input type="hidden" name="del_id" value="<?php echo "$row[id]"; ?>">
+                        <input type="hidden" name="del_image" value="<?php echo "$row[product_image]"; ?>">
+                        <button type="submit" name="delete_id" class="btn btn-danger">
+                          <i class="fa-solid fa-trash"></i>
+                        </button>
+                      </form>
+                    </td>
+                  </tr>
+                  <?php
                                     }
                                     // delete start
 
@@ -253,39 +254,39 @@ include("db.php");
                                     }
                                     // delete end
                                     ?>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </main>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
+      </main>
     </div>
-    <!-- Chart library -->
-    <script src="plugins/chart.min.js"></script>
-    <!-- Icons library -->
-    <script src="plugins/feather.min.js"></script>
-    <!-- Custom scripts -->
-    <script src="js/script.js"></script>
-    <!-- ajax -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#category').change(function() {
-                var category = $(this).val();
-                $.ajax({
-                    url: "action.php",
-                    method: "POST",
-                    data: {
-                        cate: category
-                    },
-                    success: function(data) {
-                        $('#sub_category').html(data);
-                    }
-                })
-            })
-        })
-    </script>
+  </div>
+  <!-- Chart library -->
+  <script src="plugins/chart.min.js"></script>
+  <!-- Icons library -->
+  <script src="plugins/feather.min.js"></script>
+  <!-- Custom scripts -->
+  <script src="js/script.js"></script>
+  <!-- ajax -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+  $(document).ready(function() {
+    $('#category').change(function() {
+      var category = $(this).val();
+      $.ajax({
+        url: "action.php",
+        method: "POST",
+        data: {
+          cate: category
+        },
+        success: function(data) {
+          $('#sub_category').html(data);
+        }
+      })
+    })
+  })
+  </script>
 </body>
 
 

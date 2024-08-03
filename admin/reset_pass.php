@@ -6,6 +6,8 @@ use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 $reset_token = bin2hex(random_bytes(16));
 $email = $_POST["email"];
+
+
 function sendMail($email, $reset_token){
     require("PHPMailer/PHPMailer.php");
     require("PHPMailer/SMTP.php");
